@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style2.css">
+    <title>02</title>
+</head>
+<body>
+    
+
+    <p>Puedes llevar hasta 10 stickers</p>
+<main>
+    
+   
+
+    <div>  
+        <img src="assets/img/gato.jpg" alt="gatosticker">
+        <input type="number" class="gato" min="0" max="10">
+    
+    </div>
+
+    <div>  
+        <img src="assets/img/trebol.jpg" alt="trebol">
+        <input type="number" class="trebol" min="0" max="10">
+    
+    </div>
+
+    <div>  
+        <img src="assets/img/git.jpg" alt="gitlogo">
+        <input type="number" class="git" min="0" max="10">
+    
+
+</div>
+
+</main>
+
+<span id="resultado">sTiCkErS</span>
+
+<button
+
+onclick="
+
+let cuentaGato = parseInt(document.querySelector('.gato').value)  || 0;
+let cuentaTrebol = parseInt(document.querySelector('.trebol').value)  || 0;
+let cuentaGit = parseInt(document.querySelector('.git').value)  || 0;
+
+let suma = cuentaGato + cuentaTrebol + cuentaGit;
+
+if (suma>0 && suma<11 && cuentaGato>=0 && cuentaTrebol>=0 && cuentaGit>=0){
+
+    document.getElementById('resultado').innerText = 'Llevas ' + suma + ' Stickers';
+
+}
+else if (suma>=10){
+
+    document.getElementById('resultado').innerText = 'Llevas demasiados Stickers ('+suma+')';
+}
+
+else if (suma==0){
+
+document.getElementById('resultado').innerText = 'Llevas '+suma+' Stickers, no quieres llevar stickers??';
+}
+
+
+else {
+
+    document.getElementById('resultado').innerText = 'No es una cantidad válida';
+
+}
+ 
+"
+
+>Verificar</button>
+
+
+
+</body>
+</html>

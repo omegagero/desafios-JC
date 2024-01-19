@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03</title>
+    <link rel="stylesheet" href="assets/style3.css">
+</head>
+<body>
+    
+<div class="principal">
+
+
+    <div><h3>Ingresa el Password</h3></div>
+    <div class="selectores">
+        <select name="select1" id="select1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            
+        </select>
+
+        <select name="select2" id="select2">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            
+        </select>
+
+        <select name="select3" id="select3">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            
+        </select>
+
+
+    </div>
+    <div class="btn-solve">
+        
+
+        <button
+
+        onclick="
+        
+        var selVal1 = document.querySelector('#select1').value;
+        var selVal2 = document.querySelector('#select2').value;
+        var selVal3 = document.querySelector('#select3').value;
+
+        var numConca = selVal1 + selVal2 + selVal3;
+
+
+        if(numConca==='911'){
+
+            document.getElementById('solution').innerHTML = 'Password 1 correcto';
+        }
+        else if(numConca==='714'){
+            document.getElementById('solution').innerHTML = 'Password 2 correcto';
+        }
+        else{
+            document.getElementById('solution').innerHTML = 'Password incorrecto';
+
+
+        }
+
+
+        
+        
+        
+        "
+        
+        
+        
+        >Ingresar</button>
+
+        <span id="solution">?</span>
+
+
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

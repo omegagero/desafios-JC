@@ -1,0 +1,60 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+body button{
+    
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+body span{
+    margin-top: -50px;
+}
+
+body p{
+    margin-top: 50px;
+    margin-bottom: -50px;
+}
+
+
+main div{
+
+display: flex;
+flex-direction:column;
+align-items: center;
+
+}
+
+
+main input{
+    width: 30%;
+    
+}
+
+
+main img{
+
+    width: 20%;
+    min-width: 100px;
+    max-width: 150px;
+    height: 100%;
+    padding-bottom: 10px;
+    
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+    /* max-width: 450px; */
+    justify-content: center;
+   
+   
+}
