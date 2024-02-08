@@ -1,0 +1,103 @@
+
+body{
+margin: 35px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#main {
+    width: auto; 
+    height: auto; 
+    background-color: rgba(90, 184, 198, 0.656);
+    padding: 20px;
+    border: 4px solid black;
+    min-width: 575px;
+    
+}
+#inputTarea {
+    width: 80%;
+    padding: 10px; 
+    margin-right: 10px; 
+    border-radius: 5px; 
+}
+
+#inputstilo button {
+    width: 70px; 
+    padding: 10px; 
+    border-radius: 5px; 
+    color: white;
+    background-color: green;
+}
+
+#abajo {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    
+}
+
+#resumen,
+#listados {
+    flex-basis: 45%; 
+}
+
+#resumen {
+    display: flex;
+    flex-direction: column; 
+    padding-top: 25px;
+}
+
+#listados {
+    display: flex;
+    flex-direction: column; 
+      
+}
+
+#resumen p,
+#listados p {
+    margin: 5px; 
+    
+}
+#listados p {
+    margin-right: 20px; 
+   
+}
+
+#divTareas{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding-right: 20px;
+   
+    /* width: auto; */
+   
+}
+
+
+#divId {
+    display: flex; 
+    flex-direction: row;     
+    justify-content:space-between;
+    margin-left: -40px;
+}
+#divId p{
+margin-left: 90px;
+
+   
+}
+#ulId {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+#listaDeTareas {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+
+
+  
+
+

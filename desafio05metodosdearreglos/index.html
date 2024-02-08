@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Todo List</title>
+</head>
+<body>
+<div id="main">
+<h1>Todo List</h1>
+<hr>
+<p>Nueva Tarea</p>
+<div id="inputstilo">
+<input id="inputTarea"><button id="agregarTarea"><strong>Agregar</strong></button>
+</div>
+<br>
+<div id="abajo">
+    <div id="resumen">
+        <p>Total: <span id="span"></span></p>
+        <p>Realizadas:<span id="span2"></span></p>
+    </div>
+
+    <div id="listados">
+          <div id="divId">  
+            <p id="pid">ID</p><p>Tareas</p> <p>Realizada</p>           
+          </div>
+
+
+
+        <div id="divTareas">
+            
+                <ul id="ulId"></ul>            
+                <ul id="listaDeTareas"></ul>
+                <ul id="ulId3"></ul>
+          
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+<script>
+ let realizadas = 0;
+let checkboxes =[];
+const listaDeTareas = document.querySelector("#listaDeTareas")
+const tareaInput = document.querySelector("#inputTarea")
+const btnAgregar = document.querySelector("#agregarTarea")
+const tareas = [
+    {id:Date.now().toString().slice(-4)+0, tarea:"Hacer las compras del Súper", realizado: false},
+    {id:Date.now().toString().slice(-4)+1, tarea:"Estudiar para el Desafío", realizado: false},
+    {id:Date.now().toString().slice(-4)+2, tarea:"Sacar a pasear a Pepe", realizado: false}
+]
+
+// Función para renderizar las tareas
+function renderizarTareas() {
+   
+    let html = "";
+    let html2 = "";
+    let html3 ="";
+    let ulId = document.getElementById("ulId");
+    
+    for (let tarea of tareas) {
+        html2 += `<li>${tarea.id}</li>`;
+        html += `<li>${tarea.tarea}<button onclick="borrar(${tarea.id})"> x </button></li>`;
+        html3 += `<li style="list-style-type: none;">
+                    <input type="checkbox" id="${tarea.id}" class="checkbox" data-id="${tarea.id}" ${tarea.realizado ? 'checked' : ''}>
+                 </li>`;
+      
+    }
+    listaDeTareas.innerHTML = html;
+    ulId.innerHTML = html2;
+    ulId3.innerHTML = html3;
+    document.querySelector("#span2").textContent = sumarRealizadas(); // Actualizar contador de tareas realizadas
+
+    // Actualizar el arreglo de checkboxes
+    checkboxes = document.querySelectorAll('.checkbox');
+    
+
+}
+
+function borrar(id){
+            const index = tareas.findIndex((elemento) => elemento.id == id)
+            tareas.splice(index,1)
+
+            renderizarTareas()
+            sumaTareas()
+            sumarRealizadas()
+        }
+
+
+function sumaTareas(){
+
+      const cantidadTareas = document.querySelector("#span");      
+      cantidadTareas.innerHTML = tareas.length;      
+      
+}
+
+
+function sumarRealizadas(){
+    let contador = 0;
+    for (let tarea of tareas) {
+        if (tarea.realizado) {
+            contador++;
+        }
+    }
+    return contador;
+
+
+    const cantidadRealizadas = document.querySelector("#span2");
+    cantidadRealizadas.innerHTML = realizadas;
+
+
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    sumaTareas();
+    renderizarTareas();
+});
+
+
+
+
+btnAgregar.addEventListener("click", () => {
+
+            if (tareaInput.value.trim() === "") {
+                // Si está vacío, no hacer nada
+                return;
+            }
+
+            const nuevaTarea = {id: Date.now().toString().slice(-4)+0, tarea: tareaInput.value}
+            tareas.push(nuevaTarea)
+            tareaInput.value = ""
+
+            renderizarTareas();
+            sumaTareas()
+        });
+
+
+
+document.addEventListener("change", (event) => {
+    if (event.target.matches('.checkbox')) {
+        const id = event.target.dataset.id;
+        const tarea = tareas.find(t => t.id === id);
+        tarea.realizado = event.target.checked;
+        renderizarTareas();
+        // Actualizar el contador de tareas realizadas
+        document.querySelector("#span2").textContent = sumarRealizadas();
+    }
+});
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+    
+</body>
+</html>
