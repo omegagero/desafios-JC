@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+   display: flex;
+   flex-direction: column;
+    color: aliceblue;
+    font-family: "Montserrat", sans-serif;;
+    background-color: #212429;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+body #gris{
+    min-width: 590px;
+   
+}
+
+hr{
+    border-color:#214550;
+}
+
+#cuadro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6c757e;
+    width: auto;
+    border-radius: 3%;
+    width: 80%;
+    margin: 0 auto;
+   
+    }
+body button,body input{
+    padding: 25px;
+    width: 60%;
+    margin: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+} 
+button{
+    color: white;
+    background-color: #0dcaf0;
+    font-size: 2em;
+     
+}
+body select{
+    width: 60%;
+    padding: 10px;
+    font-size: 1em;
+}
+body button{
+    padding:15px;
+}
+.inputPeso {
+    
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.grafico {
+    padding-top: 25px;
+    width: 80%; 
+    max-width: 590px; 
+    margin: 0 auto; }
